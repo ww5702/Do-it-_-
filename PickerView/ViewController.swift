@@ -10,7 +10,7 @@ import UIKit
 // 피커 뷰의 델리게이트 메서드를 사용하려면 UIPickerViewDelegate, UIPickerViewDataSource 클래스를 상속받아야한다.
 class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     let MAX_ARRAY_NUM = 10
-    let PICKER_VIEW_COLUMN = 1
+    let PICKER_VIEW_COLUMN = 2
     let PICKER_VIEW_HEIGHT : CGFloat = 80
     var imageArray : [UIImage?] = []
     var imageFileName = ["1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg", "7.jpg", "8.jpg", "9.jpg", "10.jpg"]
@@ -46,8 +46,11 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     // 선택한 이미지 이름 출력하기
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        lblImageFileName.text = imageFileName[row]
-        imageView.image = imageArray[row]
+        if component == 0 {
+            lblImageFileName.text = imageFileName[row]
+        } else {
+            imageView.image = imageArray[row]
+        }
     }
     
     // 피커 뷰에게 컴포넌트의 각 열의 타이틀을 문자열 값으로 넘겨준다.
