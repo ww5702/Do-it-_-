@@ -10,25 +10,19 @@ import WebKit
 
 class ViewController: UIViewController, WKNavigationDelegate {
 
-    @IBOutlet var txtUrl: UITextField!
     @IBOutlet var myWebView: WKWebView!
     @IBOutlet var myActivityIndicator: UIActivityIndicatorView!
-    
-    // 시작홈페이지
-    func loadWebPage(_ url : String) {
-        let myUrl = URL(string: url)    // string값을 url로 변경
-        let myRequest = URLRequest(url: myUrl!)     //url을 myRequest형으로 선언
-        myWebView.load(myRequest)
-    }
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
         myWebView.navigationDelegate = self
         //Info.plist 조정해야 화면이 뜬다.
-        loadWebPage("http://google.com")
+        let filePath = Bundle.main.path(forResource: "htmlView", ofType: "html")
+        let myUrl = URL(fileURLWithPath: filePath!)
+        let myRequest = URLRequest(url: myUrl)
+        myWebView.load(myRequest)
     }
     
     // 로딩보이기
@@ -45,62 +39,6 @@ class ViewController: UIViewController, WKNavigationDelegate {
     func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
         myActivityIndicator.stopAnimating()
         myActivityIndicator.isHidden = true
-    }
-
-    // http:// 문자열 자동삽입기능
-    func checkUrl(_ url: String) -> String {
-        var strUrl = url
-        let flag = strUrl.hasPrefix("http://")
-        if !flag {
-            strUrl = "http://" + strUrl
-        }
-        return strUrl
-    }
-    
-    
-    @IBAction func btnGotoUrl(_ sender: UIButton) {
-        // 웹페이지 주소 입력지 http://을 입력하지 않았다면 자동으로 추가해준다음 연결
-        let myUrl = checkUrl(txtUrl.text!)
-        txtUrl.text = ""
-        loadWebPage(myUrl)
-        
-    }
-    
-    @IBAction func btnGoSite1(_ sender: UIButton) {
-        loadWebPage("http://naver.com")
-    }
-    
-    @IBAction func btnGoSite2(_ sender: UIButton) {
-        loadWebPage("http://youtube.com")
-    }
-    
-    // HTML 자바스크립트 형식으로 페이지 구현
-    @IBAction func btnLoadHtmlString(_ sender: UIButton) {
-//        let htmlString = "<h1> HTML String </h1><p> String 변수를 이용한 웹 페이지 </p><p><a href=\"http://2sam.net\">2sam</a>으로 이동</p>"
-//        myWebView.loadHTMLString(htmlString, baseURL: nil)
-        let filePath = Bundle.main.path(forResource: "htmlView", ofType: "html")
-        let myUrl = URL(fileURLWithPath: filePath!)
-        let myRequest = URLRequest(url: myUrl)
-        myWebView.load(myRequest)
-    }
-    
-    @IBAction func btnLoadHtmlFile(_ sender: UIButton) {
-    }
-    
-    @IBAction func btnStop(_ sender: UIBarButtonItem) {
-        myWebView.stopLoading()
-    }
-    
-    @IBAction func btnReload(_ sender: UIBarButtonItem) {
-        myWebView.reload()
-    }
-    
-    @IBAction func btnGoBack(_ sender: UIBarButtonItem) {
-        myWebView.goBack()
-    }
-    
-    @IBAction func btnGoForward(_ sender: UIBarButtonItem) {
-        myWebView.goForward()
     }
 }
 
