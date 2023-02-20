@@ -28,7 +28,7 @@ class ViewController: UIViewController, WKNavigationDelegate {
         
         myWebView.navigationDelegate = self
         //Info.plist 조정해야 화면이 뜬다.
-        loadWebPage("http://2sam.net")
+        loadWebPage("http://google.com")
     }
     
     // 로딩보이기
@@ -67,11 +67,11 @@ class ViewController: UIViewController, WKNavigationDelegate {
     }
     
     @IBAction func btnGoSite1(_ sender: UIButton) {
-        loadWebPage("http://fallinmac.tistory.com")
+        loadWebPage("http://naver.com")
     }
     
     @IBAction func btnGoSite2(_ sender: UIButton) {
-        loadWebPage("http://blog.2sam.net")
+        loadWebPage("http://youtube.com")
     }
     
     // HTML 자바스크립트 형식으로 페이지 구현

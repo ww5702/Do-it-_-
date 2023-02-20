@@ -35,7 +35,7 @@
                                 <rect key="frame" x="23" y="101" width="61" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="Site1"/>
+                                <state key="normal" title="Naver"/>
                                 <connections>
                                     <action selector="btnGoSite1:" destination="BYZ-38-t0r" eventType="touchUpInside" id="z0g-Vf-AOU"/>
                                 </connections>
@@ -53,7 +53,7 @@
                                 <rect key="frame" x="120" y="101" width="63" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="Site2"/>
+                                <state key="normal" title="Youtube"/>
                                 <connections>
                                     <action selector="btnGoSite2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="f3Z-6X-0RM"/>
                                 </connections>
