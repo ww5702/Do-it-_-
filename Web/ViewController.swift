@@ -61,7 +61,10 @@ class ViewController: UIViewController, WKNavigationDelegate {
         loadWebPage("http://blog.2sam.net")
     }
     
+    // HTML 자바스크립트 형식으로 페이지 구현
     @IBAction func btnLoadHtmlString(_ sender: UIButton) {
+        let htmlString = "<h1> HTML String </h1><p> String 변수를 이용한 웹 페이지 </p><p><a href=\"http://2sam.net\">2sam</a>으로 이동</p>"
+        myWebView.loadHTMLString(htmlString, baseURL: nil)
     }
     
     @IBAction func btnLoadHtmlFile(_ sender: UIButton) {
