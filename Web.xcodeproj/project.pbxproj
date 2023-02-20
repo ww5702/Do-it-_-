@@ -13,6 +13,7 @@
 		C1B39599299F669000EA5AED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1B39597299F669000EA5AED /* Main.storyboard */; };
 		C1B3959B299F669000EA5AED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1B3959A299F669000EA5AED /* Assets.xcassets */; };
 		C1B3959E299F669000EA5AED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1B3959C299F669000EA5AED /* LaunchScreen.storyboard */; };
+		C1B395A629A3468700EA5AED /* htmlView.html in Resources */ = {isa = PBXBuildFile; fileRef = C1B395A529A3468700EA5AED /* htmlView.html */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		C1B3959A299F669000EA5AED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C1B3959D299F669000EA5AED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C1B3959F299F669000EA5AED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C1B395A529A3468700EA5AED /* htmlView.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = htmlView.html; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				C1B3959A299F669000EA5AED /* Assets.xcassets */,
 				C1B3959C299F669000EA5AED /* LaunchScreen.storyboard */,
 				C1B3959F299F669000EA5AED /* Info.plist */,
+				C1B395A529A3468700EA5AED /* htmlView.html */,
 			);
 			path = Web;
 			sourceTree = "<group>";
@@ -125,6 +128,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C1B395A629A3468700EA5AED /* htmlView.html in Resources */,
 				C1B3959E299F669000EA5AED /* LaunchScreen.storyboard in Resources */,
 				C1B3959B299F669000EA5AED /* Assets.xcassets in Resources */,
 				C1B39599299F669000EA5AED /* Main.storyboard in Resources */,
