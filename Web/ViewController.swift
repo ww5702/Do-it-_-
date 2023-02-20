@@ -47,9 +47,22 @@ class ViewController: UIViewController, WKNavigationDelegate {
         myActivityIndicator.isHidden = true
     }
 
+    // http:// 문자열 자동삽입기능
+    func checkUrl(_ url: String) -> String {
+        var strUrl = url
+        let flag = strUrl.hasPrefix("http://")
+        if !flag {
+            strUrl = "http://" + strUrl
+        }
+        return strUrl
+    }
     
     
     @IBAction func btnGotoUrl(_ sender: UIButton) {
+        // 웹페이지 주소 입력지 http://을 입력하지 않았다면 자동으로 추가해준다음 연결
+        let myUrl = checkUrl(txtUrl.text!)
+        txtUrl.text = ""
+        loadWebPage(myUrl)
         
     }
     
