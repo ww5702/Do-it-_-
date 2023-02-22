@@ -75,12 +75,12 @@
 				C1B3968C29A5EBA500EA5AED /* AppDelegate.swift */,
 				C1B396A629A5EDAB00EA5AED /* AddViewController.swift */,
 				C1B396A829A5EDBB00EA5AED /* DetailViewController.swift */,
+				C1B396A429A5ED8000EA5AED /* TableViewController.swift */,
 				C1B3968E29A5EBA500EA5AED /* SceneDelegate.swift */,
 				C1B3969229A5EBA500EA5AED /* Main.storyboard */,
 				C1B3969529A5EBA600EA5AED /* Assets.xcassets */,
 				C1B3969729A5EBA600EA5AED /* LaunchScreen.storyboard */,
 				C1B3969A29A5EBA600EA5AED /* Info.plist */,
-				C1B396A429A5ED8000EA5AED /* TableViewController.swift */,
 			);
 			path = Table;
 			sourceTree = "<group>";

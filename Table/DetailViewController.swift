@@ -8,12 +8,20 @@
 import UIKit
 
 class DetailViewController: UIViewController {
+    
+    // 테이블뷰에서 텍스트를 받아올 함수
+    var receiveItem = ""
 
     @IBOutlet var lblItem: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        lblItem.text = receiveItem
+    }
+    
+    func receiveItem(_ item : String) {
+        receiveItem = item
     }
     
 
