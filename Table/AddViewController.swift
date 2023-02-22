@@ -28,5 +28,12 @@ class AddViewController: UIViewController {
     */
 
     @IBAction func btnAddItem(_ sender: UIButton) {
+        // textfield값을 추가, 이미지파일은 일단 임의로 하나 선정
+        items.append(tfAddItem.text!)
+        itemsImageFile.append("clock.png")
+        // 입력후 텍스트 필드 값 지우기
+        tfAddItem.text = ""
+        // add후 전으로 돌아가기
+        _ = navigationController?.popViewController(animated: true)
     }
 }

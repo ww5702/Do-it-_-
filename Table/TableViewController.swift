@@ -24,6 +24,12 @@ class TableViewController: UITableViewController {
         // (rightBarButtonItem)이었지만 이미 오른쪽에 add아이템을 만들었으므로 left로 변경
         self.navigationItem.leftBarButtonItem = self.editButtonItem
     }
+    
+    // 새 목록 추가 동작 코딩
+    override func viewWillAppear(_ animated: Bool) {
+        // 테이블리스트를 다시 리로드 한다.
+        tvListView.reloadData()
+    }
 
     // MARK: - Table view data source
 
