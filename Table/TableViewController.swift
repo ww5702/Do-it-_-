@@ -20,7 +20,9 @@ class TableViewController: UITableViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        // 바버튼으로 목록 삭제 동작 만들기
+        // (rightBarButtonItem)이었지만 이미 오른쪽에 add아이템을 만들었으므로 left로 변경
+        self.navigationItem.leftBarButtonItem = self.editButtonItem
     }
 
     // MARK: - Table view data source
@@ -75,13 +77,20 @@ class TableViewController: UITableViewController {
         return "삭제지롱"
     }
     
-
-    /*
+    // 목록 순서 바꾸기 기능
     // Override to support rearranging the table view.
     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
+        // 먼저 셀을 기억했다가 이동시킨다
+        let itemToMove = items[(fromIndexPath as NSIndexPath).row]
+        let itemImageToMove = itemsImageFile[(fromIndexPath as NSIndexPath).row]
+        // 기존 셀 삭제
+        items.remove(at: (fromIndexPath as NSIndexPath).row)
+        itemsImageFile.remove(at: (fromIndexPath as NSIndexPath).row)
+        // 이동할 위치로 삽입
+        items.insert(itemToMove, at: (to as NSIndexPath).row)
+        itemsImageFile.insert(itemImageToMove, at: (to as NSIndexPath).row)
     }
-    */
+    
 
     /*
     // Override to support conditional rearranging of the table view.
