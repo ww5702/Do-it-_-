@@ -18,6 +18,8 @@ class ViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRecorderDe
     
     // 재생타이머를 위한 상수
     let timePlayerSelector: Selector = #selector(ViewController.updatePlayTime)
+    // 녹음타이머를 위한 상수
+    let timeRecordSelector: Selector = #selector(ViewController.updateRecordTime)
 
     @IBOutlet var pvProgressPlay: UIProgressView!
     @IBOutlet var lblCurrentTime: UILabel!
@@ -176,8 +178,44 @@ class ViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRecorderDe
     // 녹음 액션함수
     
     @IBAction func swRecordMode(_ sender: UISwitch) {
+        // 스위치가 on이면 녹음모드이므로 재생 중지, 현재 재생시간 00:00, isrecormode를 참으로, record버튼과 녹음시간 활성화
+        if sender.isOn {
+            audioPlayer.stop()
+            audioPlayer.currentTime = 0
+            lblRecordTime!.text = convertNSTimeInterval2Sttring(0)
+            isRecordMode = true
+            btnRecord.isEnabled = true
+            lblRecordTime.isEnabled = true
+        } else {
+            // on이 아니면 재생모드
+            isRecordMode = false
+            btnRecord.isEnabled = false
+            lblRecordTime.isEnabled = false
+            lblRecordTime.text = convertNSTimeInterval2Sttring(0)
+        }
+        selectAudioFile()
+        if !isRecordMode {
+            initPlay()
+        } else {
+            initRecord()
+        }
     }
     @IBAction func btnRecord(_ sender: UIButton) {
+        // 버튼이 record이면 녹음하고 아니면 stop으로 변경
+        if (sender as AnyObject).titleLabel?.text == "Record" {
+            audioRecorder.record()
+            (sender as AnyObject).setTitle("Stop", for: UIControl.State())
+            progressTimer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: timeRecordSelector, userInfo: nil, repeats: true)
+        } else {
+            audioRecorder.stop()
+            progressTimer.invalidate()
+            (sender as AnyObject).setTitle("Record", for: UIControl.State())
+            btnPlay.isEnabled = true
+            initPlay()
+        }
+    }
+    @objc func updateRecordTime() {
+        lblRecordTime.text = convertNSTimeInterval2Sttring(audioRecorder.currentTime)
     }
     
     
