@@ -8,7 +8,7 @@
 import UIKit
 import AVFoundation // 오디오 재생을 위한 헤더파일
 
-class ViewController: UIViewController, AVAudioPlayerDelegate {
+class ViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRecorderDelegate {
     
     var audioPlayer : AVAudioPlayer!
     var audioFile : URL!
@@ -28,11 +28,68 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     @IBOutlet var slVolumn: UISlider!
     
     
+    // 녹음 아울렛변수
+    @IBOutlet var btnRecord: UIButton!
+    @IBOutlet var lblRecordTime: UILabel!
+    var audioRecorder : AVAudioRecorder!
+    var isRecordMode = false                // record모드가 true면 재생모드가 아닌 녹음모드가 나오게 한다.
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        audioFile = Bundle.main.url(forResource: "Sicilian_Breeze", withExtension: "mp3")
-        initPlay()
+        selectAudioFile()
+        if !isRecordMode {
+            initPlay()
+            btnRecord.isEnabled = false
+            lblRecordTime.isEnabled = false
+        } else {
+            initRecord()
+        }
+    }
+    
+    // 녹음 파일 생성
+    func selectAudioFile() {
+        if !isRecordMode {      // 재생모드일때
+            audioFile = Bundle.main.url(forResource: "Sicilian_Breeze", withExtension: "mp3")
+        } else {                // 녹음모드일때 녹음파일 생성
+            let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+            audioFile = documentDirectory.appendingPathComponent("recordFile.m4a")
+        }
+    }
+    // 녹음을 위한 초기화
+    func initRecord() {
+        // 포맷은 apple lossless / 음질은 최대 / 비트율은 320kbps / 오디오 채널은 2 / 샘플률은 44,100Hz으로 설정한다.
+        let recordSettings = [
+        AVFormatIDKey : NSNumber(value: kAudioFormatAppleLossless as UInt32),
+        AVEncoderAudioQualityKey : AVAudioQuality.max.rawValue,
+        AVEncoderBitRateKey : 320000,
+        AVNumberOfChannelsKey : 2,
+        AVSampleRateKey : 44100.0] as [String : Any]
+        
+        do {
+            audioRecorder = try AVAudioRecorder(url: audioFile, settings: recordSettings)
+        } catch let error as NSError {
+            print("Error-initRecord : \(error)")
+        }
+        audioRecorder.delegate = self
+        slVolumn.value = 0.1
+        audioPlayer.volume = slVolumn.value
+        lblEndTime.text = convertNSTimeInterval2Sttring(0)
+        lblCurrentTime.text = convertNSTimeInterval2Sttring(0)
+        setPlayButtons(false, pause: false, stop: false)
+        
+        let session = AVAudioSession.sharedInstance()
+        do {
+            try AVAudioSession.sharedInstance().setCategory(.playAndRecord, mode: .default)
+            try AVAudioSession.sharedInstance().setActive(true)
+        } catch let error as NSError {
+            print("Error-setCategory : \(error)")
+        }
+        do {
+            try session.setActive(true)
+        } catch let error as NSError {
+            print("Error-setActive : \(error)")
+        }
     }
     
     // 오디오 재생을 위한 초기화
@@ -102,7 +159,8 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         // 정지했을때 시간이 00:00이 되도록
         audioPlayer.currentTime = 0
         lblCurrentTime.text = convertNSTimeInterval2Sttring(0)
-        progressTimer.invalidate()  //타이머도 초기화
+        pvProgressPlay.progress = 0.0 // 진행도 초기화
+        progressTimer.invalidate()  // 타이머도 초기화
     }
     @IBAction func slChangeVolumn(_ sender: UISlider) {
         // slider 값에 따라서 볼륨 조절
@@ -113,5 +171,15 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         progressTimer.invalidate()
         setPlayButtons(true, pause: false, stop: false)
     }
+    
+    
+    // 녹음 액션함수
+    
+    @IBAction func swRecordMode(_ sender: UISwitch) {
+    }
+    @IBAction func btnRecord(_ sender: UIButton) {
+    }
+    
+    
 }
 

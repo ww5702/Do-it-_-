@@ -105,20 +105,65 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="0tu-f5-X4l">
+                                <rect key="frame" x="121.33333333333333" y="416" width="150.33333333333337" height="81"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="47" translatesAutoresizingMaskIntoConstraints="NO" id="ZBz-Vz-Uln">
+                                        <rect key="frame" x="0.0" y="0.0" width="150.33333333333334" height="31"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Record" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gig-sr-kIc">
+                                                <rect key="frame" x="0.0" y="0.0" width="54.333333333333336" height="31"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="lFj-Io-0WK">
+                                                <rect key="frame" x="101.33333333333333" y="0.0" width="50.999999999999986" height="31"/>
+                                                <connections>
+                                                    <action selector="swRecordMode:" destination="BYZ-38-t0r" eventType="valueChanged" id="xMU-Ob-XPV"/>
+                                                </connections>
+                                            </switch>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="qZR-rY-dtH">
+                                        <rect key="frame" x="0.0" y="51" width="130" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wub-Tb-tVm">
+                                                <rect key="frame" x="0.0" y="0.0" width="49" height="30"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="Record"/>
+                                                <connections>
+                                                    <action selector="btnRecord:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EmZ-3f-V3D"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lOo-JZ-mLp">
+                                                <rect key="frame" x="84.000000000000014" y="0.0" width="45.999999999999986" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="0tu-f5-X4l" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="CvD-qF-ShR"/>
                             <constraint firstItem="0Ur-GE-pD4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="Dxo-ye-Uaz"/>
                             <constraint firstItem="0Ur-GE-pD4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="VN9-Nd-uHH"/>
+                            <constraint firstItem="0tu-f5-X4l" firstAttribute="top" secondItem="0Ur-GE-pD4" secondAttribute="bottom" constant="52" id="X97-yg-idg"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="btnPause" destination="QQD-LH-MBU" id="YUu-bR-NtU"/>
                         <outlet property="btnPlay" destination="kgr-c0-7X8" id="duB-9r-zYC"/>
+                        <outlet property="btnRecord" destination="Wub-Tb-tVm" id="Awn-Id-sMn"/>
                         <outlet property="btnStop" destination="QGW-Uz-YX9" id="ylZ-O0-kGr"/>
                         <outlet property="lblCurrentTime" destination="6qn-lB-ryd" id="nyR-ki-6Qb"/>
                         <outlet property="lblEndTime" destination="PRa-DE-Mxf" id="eWg-xc-hvn"/>
+                        <outlet property="lblRecordTime" destination="lOo-JZ-mLp" id="llZ-kv-Lrf"/>
                         <outlet property="pvProgressPlay" destination="f0O-nm-Xpn" id="Tvd-mS-wT8"/>
                         <outlet property="slVolumn" destination="hvz-TR-Pmv" id="y8s-OQ-q8A"/>
                     </connections>
