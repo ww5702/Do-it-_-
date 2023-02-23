@@ -13,9 +13,11 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     var audioPlayer : AVAudioPlayer!
     var audioFile : URL!
     
-    let MAX_VOLUMN: Float = 100.0
+    let MAX_VOLUMN: Float = 10.0
     var progressTimer : Timer!
     
+    // 재생타이머를 위한 상수
+    let timePlayerSelector: Selector = #selector(ViewController.updatePlayTime)
 
     @IBOutlet var pvProgressPlay: UIProgressView!
     @IBOutlet var lblCurrentTime: UILabel!
@@ -82,6 +84,13 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     @IBAction func btnPlayAudio(_ sender: UIButton) {
         audioPlayer.play()                              // 오디오 재생
         setPlayButtons(false, pause: true, stop: true)  // 재생버튼 비활성화, 일시정지, 멈춤버튼 활성화
+        // 재생시간 타이머 표시 (0.1초 간격)
+        progressTimer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: timePlayerSelector, userInfo: nil, repeats: true)
+    }
+    // updatePlayTime
+    @objc func updatePlayTime() {
+        lblCurrentTime.text = convertNSTimeInterval2Sttring(audioPlayer.currentTime)
+        pvProgressPlay.progress = Float(audioPlayer.currentTime/audioPlayer.duration)
     }
     @IBAction func btnPauseAudio(_ sender: UIButton) {
         audioPlayer.pause()
@@ -90,8 +99,19 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     @IBAction func btnStopAudio(_ sender: UIButton) {
         audioPlayer.stop()
         setPlayButtons(true, pause: true, stop: false)
+        // 정지했을때 시간이 00:00이 되도록
+        audioPlayer.currentTime = 0
+        lblCurrentTime.text = convertNSTimeInterval2Sttring(0)
+        progressTimer.invalidate()  //타이머도 초기화
     }
     @IBAction func slChangeVolumn(_ sender: UISlider) {
+        // slider 값에 따라서 볼륨 조절
+        audioPlayer.volume = slVolumn.value
+    }
+    // 오디오 재생이 끝나면 맨 처음 상태로 돌아가도록
+    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
+        progressTimer.invalidate()
+        setPlayButtons(true, pause: false, stop: false)
     }
 }
 
