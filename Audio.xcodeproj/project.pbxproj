@@ -13,6 +13,7 @@
 		C1B396EA29A7414D00EA5AED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1B396E829A7414D00EA5AED /* Main.storyboard */; };
 		C1B396EC29A7414D00EA5AED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1B396EB29A7414D00EA5AED /* Assets.xcassets */; };
 		C1B396EF29A7414D00EA5AED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1B396ED29A7414D00EA5AED /* LaunchScreen.storyboard */; };
+		C1B396FD29A7469500EA5AED /* Sicilian_Breeze.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C1B396FC29A7469500EA5AED /* Sicilian_Breeze.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		C1B396EB29A7414D00EA5AED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C1B396EE29A7414D00EA5AED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C1B396F029A7414D00EA5AED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C1B396FC29A7469500EA5AED /* Sicilian_Breeze.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Sicilian_Breeze.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 		C1B396E129A7414D00EA5AED /* Audio */ = {
 			isa = PBXGroup;
 			children = (
+				C1B396FC29A7469500EA5AED /* Sicilian_Breeze.mp3 */,
 				C1B396E229A7414D00EA5AED /* AppDelegate.swift */,
 				C1B396E429A7414D00EA5AED /* SceneDelegate.swift */,
 				C1B396E629A7414D00EA5AED /* ViewController.swift */,
@@ -125,6 +128,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C1B396FD29A7469500EA5AED /* Sicilian_Breeze.mp3 in Resources */,
 				C1B396EF29A7414D00EA5AED /* LaunchScreen.storyboard in Resources */,
 				C1B396EC29A7414D00EA5AED /* Assets.xcassets in Resources */,
 				C1B396EA29A7414D00EA5AED /* Main.storyboard in Resources */,
