@@ -62,7 +62,6 @@
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="Play"/>
                                                 <connections>
-                                                    <action selector="btnPlay:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WRf-Wc-OAA"/>
                                                     <action selector="btnPlayAudio:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KzF-fs-tdg"/>
                                                 </connections>
                                             </button>
@@ -71,7 +70,6 @@
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="Pause"/>
                                                 <connections>
-                                                    <action selector="btnPause:" destination="BYZ-38-t0r" eventType="touchUpInside" id="F1K-V3-H82"/>
                                                     <action selector="btnPauseAudio:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IuY-q1-UCw"/>
                                                 </connections>
                                             </button>
@@ -80,7 +78,6 @@
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="Stop"/>
                                                 <connections>
-                                                    <action selector="btnStop:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3nR-T8-amc"/>
                                                     <action selector="btnStopAudio:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MR4-27-d7r"/>
                                                 </connections>
                                             </button>
@@ -117,8 +114,8 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="btnPaly" destination="kgr-c0-7X8" id="duB-9r-zYC"/>
                         <outlet property="btnPause" destination="QQD-LH-MBU" id="YUu-bR-NtU"/>
+                        <outlet property="btnPlay" destination="kgr-c0-7X8" id="duB-9r-zYC"/>
                         <outlet property="btnStop" destination="QGW-Uz-YX9" id="ylZ-O0-kGr"/>
                         <outlet property="lblCurrentTime" destination="6qn-lB-ryd" id="nyR-ki-6Qb"/>
                         <outlet property="lblEndTime" destination="PRa-DE-Mxf" id="eWg-xc-hvn"/>

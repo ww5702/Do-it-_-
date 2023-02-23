@@ -13,14 +13,14 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     var audioPlayer : AVAudioPlayer!
     var audioFile : URL!
     
-    let MAX_VOLUMN: Float = 10.0
+    let MAX_VOLUMN: Float = 100.0
     var progressTimer : Timer!
     
 
     @IBOutlet var pvProgressPlay: UIProgressView!
     @IBOutlet var lblCurrentTime: UILabel!
     @IBOutlet var lblEndTime: UILabel!
-    @IBOutlet var btnPaly: UIButton!
+    @IBOutlet var btnPlay: UIButton!
     @IBOutlet var btnPause: UIButton!
     @IBOutlet var btnStop: UIButton!
     @IBOutlet var slVolumn: UISlider!
@@ -43,7 +43,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
             print("Error-initPlay :\(error)")
         }
         slVolumn.maximumValue = MAX_VOLUMN      // 최대볼륨 10
-        slVolumn.value = 1.0                    // 볼륨 1.0으로 초기화
+        slVolumn.value = 0.1                    // 볼륨 1.0으로 초기화
         pvProgressPlay.progress = 0             // 프로그레스뷰(진행도) 0으로 초기화
         
         audioPlayer.delegate = self             // delegate를 self로
@@ -54,6 +54,14 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         // endtime을 audioPlayer.duration으로 할수도 있지만 00:00의 형태로 만들기 위해 함수를 만든다
         lblEndTime.text = convertNSTimeInterval2Sttring(audioPlayer.duration)   // 오디오 파일의 재생시간을 함수에 입력
         lblCurrentTime.text = convertNSTimeInterval2Sttring(0)                  // 00:00이 출력되도록 0을 입력
+        
+        // 재생, 일시정지, 정지 버튼
+        /*
+        btnPlay.isEnabled = true    // 활성화
+        btnPause.isEnabled = false   // 비활성화
+        btnStop.isEnabled = false   // 활성화 */
+        setPlayButtons(true, pause : false, stop : false)  // 같은 의미이다.
+        
     }
     
     // 00:00 형태로 바꾸기 위해 TimeIntervalr값을 받아 문자열로 돌려보내는 함수
@@ -64,11 +72,24 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         return strTime
     }
     
+    // play, stop, pause 버튼의 동작여부를 설정하는 부분의 함수
+    func setPlayButtons(_ play: Bool, pause: Bool, stop: Bool) {
+        btnPlay.isEnabled = play
+        btnPause.isEnabled = pause
+        btnStop.isEnabled = stop
+    }
+    
     @IBAction func btnPlayAudio(_ sender: UIButton) {
+        audioPlayer.play()                              // 오디오 재생
+        setPlayButtons(false, pause: true, stop: true)  // 재생버튼 비활성화, 일시정지, 멈춤버튼 활성화
     }
     @IBAction func btnPauseAudio(_ sender: UIButton) {
+        audioPlayer.pause()
+        setPlayButtons(true, pause: false, stop: true)
     }
     @IBAction func btnStopAudio(_ sender: UIButton) {
+        audioPlayer.stop()
+        setPlayButtons(true, pause: true, stop: false)
     }
     @IBAction func slChangeVolumn(_ sender: UISlider) {
     }
