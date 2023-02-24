@@ -30,6 +30,10 @@ class ViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRecorderDe
     @IBOutlet var slVolumn: UISlider!
     
     
+    // 미션
+    @IBOutlet var imageView: UIImageView!
+    
+    
     // 녹음 아울렛변수
     @IBOutlet var btnRecord: UIButton!
     @IBOutlet var lblRecordTime: UILabel!
@@ -38,6 +42,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRecorderDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        imageView.image = UIImage(named: "stop.png")
         // Do any additional setup after loading the view.
         selectAudioFile()
         if !isRecordMode {
@@ -145,6 +150,9 @@ class ViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRecorderDe
         setPlayButtons(false, pause: true, stop: true)  // 재생버튼 비활성화, 일시정지, 멈춤버튼 활성화
         // 재생시간 타이머 표시 (0.1초 간격)
         progressTimer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: timePlayerSelector, userInfo: nil, repeats: true)
+        
+        // 미션이미지
+        imageView.image = UIImage(named: "play.png")
     }
     // updatePlayTime
     @objc func updatePlayTime() {
@@ -154,6 +162,9 @@ class ViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRecorderDe
     @IBAction func btnPauseAudio(_ sender: UIButton) {
         audioPlayer.pause()
         setPlayButtons(true, pause: false, stop: true)
+        
+        // 미션 이미지
+        imageView.image = UIImage(named: "pause.png")
     }
     @IBAction func btnStopAudio(_ sender: UIButton) {
         audioPlayer.stop()
@@ -163,6 +174,9 @@ class ViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRecorderDe
         lblCurrentTime.text = convertNSTimeInterval2Sttring(0)
         pvProgressPlay.progress = 0.0 // 진행도 초기화
         progressTimer.invalidate()  // 타이머도 초기화
+        
+        // 미션 이미지
+        imageView.image = UIImage(named: "stop.png")
     }
     @IBAction func slChangeVolumn(_ sender: UISlider) {
         // slider 값에 따라서 볼륨 조절
@@ -206,12 +220,18 @@ class ViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRecorderDe
             audioRecorder.record()
             (sender as AnyObject).setTitle("Stop", for: UIControl.State())
             progressTimer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: timeRecordSelector, userInfo: nil, repeats: true)
+            
+            // 미션 이미지
+            imageView.image = UIImage(named: "record.png")
         } else {
             audioRecorder.stop()
             progressTimer.invalidate()
             (sender as AnyObject).setTitle("Record", for: UIControl.State())
             btnPlay.isEnabled = true
             initPlay()
+            
+            // 미션 이미지
+            imageView.image = UIImage(named: "stop.png")
         }
     }
     @objc func updateRecordTime() {
