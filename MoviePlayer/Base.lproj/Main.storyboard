@@ -28,16 +28,32 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zIp-eC-QbV">
-                                        <rect key="frame" x="0.0" y="32" width="361" height="323.66666666666669"/>
-                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" title="Button" image="FastTyping.jpg"/>
-                                        <connections>
-                                            <action selector="btnPlayInternalMovie:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DXC-Sp-IGj"/>
-                                        </connections>
-                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IEF-re-dCx">
+                                        <rect key="frame" x="0.0" y="32" width="361" height="287"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zIp-eC-QbV">
+                                                <rect key="frame" x="0.0" y="0.0" width="180.66666666666666" height="287"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="Button" image="FastTyping.jpg"/>
+                                                <connections>
+                                                    <action selector="btnPlayInternalMovie:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DXC-Sp-IGj"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ta0-4i-K1i">
+                                                <rect key="frame" x="180.66666666666663" y="0.0" width="180.33333333333337" height="287"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                <connections>
+                                                    <action selector="btnPlayMovInternal:" destination="BYZ-38-t0r" eventType="touchUpInside" id="I9N-rP-gDT"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="Ta0-4i-K1i" firstAttribute="width" secondItem="zIp-eC-QbV" secondAttribute="width" id="tRN-7X-9TS"/>
+                                        </constraints>
+                                    </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p9s-25-ucL">
-                                        <rect key="frame" x="155.66666666666666" y="355.66666666666669" width="50" height="32"/>
+                                        <rect key="frame" x="155.66666666666666" y="319" width="50" height="32"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="32" id="g2w-Q5-BfZ"/>
                                         </constraints>
@@ -46,7 +62,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="외부 링크 비디오 재생" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jkW-Gk-4Wb">
-                                        <rect key="frame" x="107.66666666666667" y="387.66666666666669" width="145.66666666666663" height="32"/>
+                                        <rect key="frame" x="107.66666666666667" y="351" width="145.66666666666663" height="32"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="32" id="g5k-bk-lX0"/>
                                         </constraints>
@@ -54,17 +70,34 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qwe-FI-e0c">
-                                        <rect key="frame" x="0.0" y="419.66666666666674" width="361" height="323.33333333333326"/>
-                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" title="Button" image="Fireworks.jpg"/>
-                                        <connections>
-                                            <action selector="btnPlayExternalMovie:" destination="BYZ-38-t0r" eventType="touchUpInside" id="q7D-EM-B19"/>
-                                        </connections>
-                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GbY-Gj-DFV">
+                                        <rect key="frame" x="0.0" y="383" width="361" height="360"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qwe-FI-e0c">
+                                                <rect key="frame" x="0.0" y="0.0" width="180.66666666666666" height="360"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="Button" image="Fireworks.jpg"/>
+                                                <connections>
+                                                    <action selector="btnPlayExternalMovie:" destination="BYZ-38-t0r" eventType="touchUpInside" id="q7D-EM-B19"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fxW-IF-yo1">
+                                                <rect key="frame" x="180.66666666666663" y="0.0" width="180.33333333333337" height="360"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                <connections>
+                                                    <action selector="btnPlayMovExternal:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aHR-Ki-X0M"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="fxW-IF-yo1" firstAttribute="width" secondItem="qwe-FI-e0c" secondAttribute="width" id="grR-mc-ap1"/>
+                                        </constraints>
+                                    </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="qwe-FI-e0c" firstAttribute="height" secondItem="zIp-eC-QbV" secondAttribute="height" id="iNl-YT-4cL"/>
+                                    <constraint firstItem="jkW-Gk-4Wb" firstAttribute="top" secondItem="p9s-25-ucL" secondAttribute="bottom" id="ATj-wy-wye"/>
+                                    <constraint firstItem="p9s-25-ucL" firstAttribute="top" secondItem="IEF-re-dCx" secondAttribute="bottom" id="o1r-bN-FZz"/>
                                 </constraints>
                             </stackView>
                         </subviews>

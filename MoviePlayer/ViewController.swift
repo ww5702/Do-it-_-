@@ -47,6 +47,38 @@ class ViewController: UIViewController {
         
         playVideo(url: url)
     }
+
+    @IBAction func btnPlayMovInternal(_ sender: UIButton) {
+        let filePath: String? = Bundle.main.path(forResource: "Mountaineering", ofType: "mov")  // 내부경로 받아오기
+        let url = NSURL(fileURLWithPath: filePath!)                                         // NSURL형식으로 변경
+        
+        let playerController = AVPlayerViewController()
+        
+        let player = AVPlayer(url: url as URL)
+        playerController.player = player
+        
+        self.present(playerController,animated: true) {
+            player.play()
+        }
+        
+        playVideo(url: url)
+    }
+    
+    @IBAction func btnPlayMovExternal(_ sender: UIButton) {
+        let url = NSURL(string: "https://dl.dropboxusercontent.com/s/ijybpprsmx0bgre/Seascape.mov")!
+        
+        let playerController = AVPlayerViewController()
+        
+        let player = AVPlayer(url: url as URL)
+        playerController.player = player
+        
+        self.present(playerController, animated: true) {
+            player.play()
+        }
+        
+        playVideo(url: url)
+    }
+    
     
     // 비디오 재생함수
     private func playVideo(url : NSURL) {
