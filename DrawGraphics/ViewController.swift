@@ -141,6 +141,59 @@ class ViewController: UIViewController {
         
     }
     
+    
+    @IBAction func btnDrawMission(_ sender: UIButton) {
+        UIGraphicsBeginImageContext(imgview.frame.size)
+        let context = UIGraphicsGetCurrentContext()!
+        
+        // 삼각형
+        context.setLineWidth(2.0)
+        context.setStrokeColor(UIColor.green.cgColor)
+        context.setFillColor(UIColor.green.cgColor)
+        context.move(to: CGPoint(x: 140, y: 450))
+        context.addLine(to: CGPoint(x: 170, y: 200))
+        context.addLine(to: CGPoint(x: 200, y: 450))
+        context.addLine(to: CGPoint(x: 140, y: 450))
+        context.fillPath()
+        context.strokePath()
+        
+        // 주위 원
+        context.setStrokeColor(UIColor.yellow.cgColor)
+        context.setFillColor(UIColor.yellow.cgColor)
+        let circle2 = CGRect(x: 170, y: 150, width: 100, height: 100)
+        context.addEllipse(in: circle2)
+        context.fillEllipse(in: circle2)
+        context.strokePath()
+        
+        let circle3 = CGRect(x: 70, y: 150, width: 100, height: 100)
+        context.addEllipse(in: circle3)
+        context.fillEllipse(in: circle3)
+        context.strokePath()
+        
+        let circle4 = CGRect(x: 120, y: 100, width: 100, height: 100)
+        context.addEllipse(in: circle4)
+        context.fillEllipse(in: circle4)
+        context.strokePath()
+        
+        let circle5 = CGRect(x: 120, y: 200, width: 100, height: 100)
+        context.addEllipse(in: circle5)
+        context.fillEllipse(in: circle5)
+        context.strokePath()
+        
+        // 가운데 원
+        context.setStrokeColor(UIColor.orange.cgColor)
+        context.setFillColor(UIColor.orange.cgColor)
+        let circle = CGRect(x: 120, y: 150, width: 100, height: 100)
+        context.addEllipse(in: circle)
+        context.fillEllipse(in: circle)
+        context.strokePath()
+        
+        
+        imgview.image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+    }
+    
 
 }
 
