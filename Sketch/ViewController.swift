@@ -73,20 +73,24 @@ class ViewController: UIViewController {
     
     
     @IBAction func btnColorBlack(_ sender: UIButton) {
+        lineColor = UIColor.white.cgColor
     }
     
     
     @IBAction func btnColorRed(_ sender: UIButton) {
+        lineColor = UIColor.red.cgColor
     }
     
     @IBAction func btnColorGreen(_ sender: UIButton) {
+        lineColor = UIColor.green.cgColor
     }
     
-    
     @IBAction func btnColorBlue(_ sender: UIButton) {
+        lineColor = UIColor.blue.cgColor
     }
     
     @IBAction func btnSetLineWidth(_ sender: UIButton) {
+        lineSize = 4.0
     }
     
     
