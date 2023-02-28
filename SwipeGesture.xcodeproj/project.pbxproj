@@ -21,6 +21,10 @@
 		C1DFAB6B29ADDC34008B5A76 /* arrow-left-red.png in Resources */ = {isa = PBXBuildFile; fileRef = C1DFAB6329ADDC34008B5A76 /* arrow-left-red.png */; };
 		C1DFAB6C29ADDC34008B5A76 /* arrow-down-black.png in Resources */ = {isa = PBXBuildFile; fileRef = C1DFAB6429ADDC34008B5A76 /* arrow-down-black.png */; };
 		C1DFAB6D29ADDC34008B5A76 /* arrow-down-red.png in Resources */ = {isa = PBXBuildFile; fileRef = C1DFAB6529ADDC34008B5A76 /* arrow-down-red.png */; };
+		C1DFAB7229ADDE2C008B5A76 /* arrow-down-green.png in Resources */ = {isa = PBXBuildFile; fileRef = C1DFAB6E29ADDE2C008B5A76 /* arrow-down-green.png */; };
+		C1DFAB7329ADDE2C008B5A76 /* arrow-left-green.png in Resources */ = {isa = PBXBuildFile; fileRef = C1DFAB6F29ADDE2C008B5A76 /* arrow-left-green.png */; };
+		C1DFAB7429ADDE2C008B5A76 /* arrow-up-green.png in Resources */ = {isa = PBXBuildFile; fileRef = C1DFAB7029ADDE2C008B5A76 /* arrow-up-green.png */; };
+		C1DFAB7529ADDE2C008B5A76 /* arrow-right-green.png in Resources */ = {isa = PBXBuildFile; fileRef = C1DFAB7129ADDE2C008B5A76 /* arrow-right-green.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +44,10 @@
 		C1DFAB6329ADDC34008B5A76 /* arrow-left-red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow-left-red.png"; sourceTree = "<group>"; };
 		C1DFAB6429ADDC34008B5A76 /* arrow-down-black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow-down-black.png"; sourceTree = "<group>"; };
 		C1DFAB6529ADDC34008B5A76 /* arrow-down-red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow-down-red.png"; sourceTree = "<group>"; };
+		C1DFAB6E29ADDE2C008B5A76 /* arrow-down-green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow-down-green.png"; sourceTree = "<group>"; };
+		C1DFAB6F29ADDE2C008B5A76 /* arrow-left-green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow-left-green.png"; sourceTree = "<group>"; };
+		C1DFAB7029ADDE2C008B5A76 /* arrow-up-green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow-up-green.png"; sourceTree = "<group>"; };
+		C1DFAB7129ADDE2C008B5A76 /* arrow-right-green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow-right-green.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +88,10 @@
 				C1DFAB6229ADDC34008B5A76 /* arrow-right-red.png */,
 				C1DFAB5F29ADDC34008B5A76 /* arrow-up-black.png */,
 				C1DFAB6129ADDC34008B5A76 /* arrow-up-red.png */,
+				C1DFAB6E29ADDE2C008B5A76 /* arrow-down-green.png */,
+				C1DFAB6F29ADDE2C008B5A76 /* arrow-left-green.png */,
+				C1DFAB7129ADDE2C008B5A76 /* arrow-right-green.png */,
+				C1DFAB7029ADDE2C008B5A76 /* arrow-up-green.png */,
 				C1DFAB4A29ADDBCD008B5A76 /* AppDelegate.swift */,
 				C1DFAB4C29ADDBCD008B5A76 /* SceneDelegate.swift */,
 				C1DFAB4E29ADDBCD008B5A76 /* ViewController.swift */,
@@ -152,12 +164,16 @@
 				C1DFAB6829ADDC34008B5A76 /* arrow-left-black.png in Resources */,
 				C1DFAB6D29ADDC34008B5A76 /* arrow-down-red.png in Resources */,
 				C1DFAB6629ADDC34008B5A76 /* arrow-right-black.png in Resources */,
+				C1DFAB7329ADDE2C008B5A76 /* arrow-left-green.png in Resources */,
 				C1DFAB6729ADDC34008B5A76 /* arrow-up-black.png in Resources */,
 				C1DFAB5729ADDBCE008B5A76 /* LaunchScreen.storyboard in Resources */,
 				C1DFAB6A29ADDC34008B5A76 /* arrow-right-red.png in Resources */,
 				C1DFAB5429ADDBCE008B5A76 /* Assets.xcassets in Resources */,
+				C1DFAB7429ADDE2C008B5A76 /* arrow-up-green.png in Resources */,
 				C1DFAB6B29ADDC34008B5A76 /* arrow-left-red.png in Resources */,
 				C1DFAB6929ADDC34008B5A76 /* arrow-up-red.png in Resources */,
+				C1DFAB7529ADDE2C008B5A76 /* arrow-right-green.png in Resources */,
+				C1DFAB7229ADDE2C008B5A76 /* arrow-down-green.png in Resources */,
 				C1DFAB5229ADDBCD008B5A76 /* Main.storyboard in Resources */,
 				C1DFAB6C29ADDC34008B5A76 /* arrow-down-black.png in Resources */,
 			);
